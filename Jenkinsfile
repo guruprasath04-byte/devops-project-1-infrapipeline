@@ -32,13 +32,16 @@ pipeline {
         }
 
         stage('Approval') {
-            /*
-            when {
-                expression { env.BRANCH_NAME == 'production' }
-            }
-            */
             steps {
                 input message: "Approve the deployment to production?", ok: 'Deploy'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                dir("${TF_WORKDIR}") {
+                    sh 'terraform apply tfplan'
+                }
             }
         }
     }
