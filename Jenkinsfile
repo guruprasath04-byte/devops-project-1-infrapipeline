@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: "${env.BRANCH_NAME}", url: "https://github.com/guruprasath04-byte/infra-pipeline.git"
+                git branch: "${env.BRANCH_NAME}", url: "https://github.com/guruprasath04-byte/devops-project-1-infrapipeline.git"
             }
         }
 
