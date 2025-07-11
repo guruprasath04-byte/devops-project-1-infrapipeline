@@ -4,6 +4,7 @@ resource "aws_vpc" "myvpc" {
 
   tags = {
     Name = "${var.env}-vpc"
+    env  = var.env
   }
 }
 
@@ -18,6 +19,6 @@ availability_zone = var.az
 }
 
 output "subnet_id" {
-  value       = "aws_subnet.main.id"
+  value       = aws_subnet.main.id
   description = "The subnet which my Ec2 will be created"
 }
