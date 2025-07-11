@@ -13,7 +13,7 @@ variable "subnet_cidr" {
   description = "SUBNET VPC"
 }
 
-variable "subnet_az" {
+variable "az" {
   type        = string
   description = "availability zone of the subnet"
 }
